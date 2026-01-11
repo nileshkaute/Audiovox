@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import AdminNavbar from '../../component/admin/AdminNavbar';
+import ProductCard from '../../component/shared/ProductCard';
 
 const AddProduct = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +20,7 @@ const AddProduct = () => {
     tagBgColor: '#ef4444',
     tagTextColor: '#ffffff',
   });
-  const [imageType, setImageType] = useState('url'); // 'url' or 'upload'
+  const [imageType, setImageType] = useState('url');
 
   const handleChange = (e) => {
     const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
@@ -30,7 +31,6 @@ const AddProduct = () => {
     if (imageType === 'upload') {
         const file = e.target.files[0];
         if (file) {
-             // Create a fake local URL for preview
             const localUrl = URL.createObjectURL(file);
             setFormData({ ...formData, image: localUrl }); 
         }
@@ -42,8 +42,6 @@ const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // In a real app with uploads, we'd use FormData here.
-      // sending JSON for now.
       await axios.post('http://localhost:5000/api/products', formData);
       alert('Product added successfully!');
       setFormData({
@@ -66,6 +64,14 @@ const AddProduct = () => {
       console.error('Error adding product:', error);
       alert('Failed to add product');
     }
+  };
+
+  // Create preview product object
+  const previewProduct = {
+    ...formData,
+    price: formData.price || 0,
+    title: formData.title || 'Product Title',
+    description: formData.description || 'Product description will appear here...',
   };
 
   return (
@@ -145,7 +151,7 @@ const AddProduct = () => {
                      <input
                      type="text"
                      name="image"
-                     value={formData.image} // This holds the URL string
+                     value={formData.image}
                      onChange={handleImageChange}
                      className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                      placeholder="https://example.com/image.jpg"
@@ -309,68 +315,18 @@ const AddProduct = () => {
           </form>
         </div>
 
-        {/* Right: Preview */}
+        {/* Right: Live Preview using shared ProductCard */}
         <div className="flex flex-col items-center justify-start sticky top-24">
             <h3 className="text-xl font-bold text-gray-700 mb-6">Live Preview</h3>
             
-            {/* Card Preview */}
-            <div 
-                className="w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 transform hover:scale-105 relative"
-                style={{ backgroundColor: formData.backgroundColor }}
-            >
-                {/* Tag Overlay */}
-                {formData.tagVisible && (
-                    <div 
-                        className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold shadow-md z-10"
-                        style={{ backgroundColor: formData.tagBgColor, color: formData.tagTextColor }}
-                    >
-                        {formData.tagText || 'New'}
-                    </div>
-                )}
-
-                {/* Image Area */}
-                <div className="h-64 w-full bg-gray-200 flex items-center justify-center overflow-hidden">
-                    {formData.image ? (
-                        <img src={formData.image} alt="Preview" className="w-full h-full object-cover" />
-                    ) : (
-                        <span className="text-gray-400">No Image</span>
-                    )}
-                </div>
-                
-                {/* Content Area */}
-                <div className="p-6">
-                    <div className="flex justify-between items-start mb-2">
-                         <h4 
-                            className="text-xl font-bold break-words w-2/3"
-                            style={{ color: formData.titleColor }}
-                         >
-                            {formData.title || "Product Title"}
-                         </h4>
-                         <span 
-                            className="text-lg font-semibold"
-                            style={{ color: formData.priceColor }}
-                         >
-                            ₹{formData.price || "0"}
-                         </span>
-                    </div>
-                   
-                    <p 
-                        className="text-sm leading-relaxed mb-4 break-words"
-                        style={{ color: formData.descriptionColor }}
-                    >
-                        {formData.description || "Product description will appear here..."}
-                    </p>
-
-                    <button 
-                        className="w-full py-2 rounded-lg font-medium hover:opacity-80 transition"
-                        style={{ backgroundColor: formData.buttonColor, color: formData.buttonTextColor }}
-                    >
-                        Buy Now
-                    </button>
-                    
-                </div>
+            {/* Using the shared ProductCard component */}
+            <div className="w-full max-w-sm">
+              <ProductCard product={previewProduct} />
             </div>
-             <p className="mt-4 text-gray-500 text-sm">This is how your product card will appear in the store.</p>
+            
+            <p className="mt-4 text-gray-500 text-sm text-center">
+              This is exactly how your product card will appear on the home page.
+            </p>
         </div>
 
       </div>
