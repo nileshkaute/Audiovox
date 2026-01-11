@@ -15,12 +15,50 @@ const productSchema = new mongoose.Schema(
       required: true,
     },
     image: {
-      type: String, // Can be URL or file path
+      type: String,
       required: true,
     },
+    // Card styling
     backgroundColor: {
       type: String,
-      default: "#ffffff", // Default white
+      default: "#ffffff",
+    },
+    titleColor: {
+      type: String,
+      default: "#000000",
+    },
+    descriptionColor: {
+      type: String,
+      default: "#4a5568",
+    },
+    priceColor: {
+      type: String,
+      default: "#047857",
+    },
+    buttonColor: {
+      type: String,
+      default: "#000000",
+    },
+    buttonTextColor: {
+      type: String,
+      default: "#ffffff",
+    },
+    // Tag settings
+    tagVisible: {
+      type: Boolean,
+      default: false,
+    },
+    tagText: {
+      type: String,
+      default: "New",
+    },
+    tagBgColor: {
+      type: String,
+      default: "#ef4444",
+    },
+    tagTextColor: {
+      type: String,
+      default: "#ffffff",
     },
   },
   { timestamps: true }

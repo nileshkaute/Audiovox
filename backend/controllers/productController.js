@@ -14,6 +14,10 @@ exports.createProduct = async (req, res) => {
       priceColor,
       buttonColor,
       buttonTextColor,
+      tagVisible,
+      tagText,
+      tagBgColor,
+      tagTextColor,
     } = req.body;
 
     // Basic validation
@@ -34,6 +38,10 @@ exports.createProduct = async (req, res) => {
       priceColor,
       buttonColor,
       buttonTextColor,
+      tagVisible,
+      tagText,
+      tagBgColor,
+      tagTextColor,
     });
 
     const savedProduct = await newProduct.save();
