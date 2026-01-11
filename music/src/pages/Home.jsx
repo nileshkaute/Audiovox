@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Flame, Headphones } from "lucide-react";
 import Hero from "../component/home/Hero";
 import ProductCard from "../component/shared/ProductCard";
 import Footer from "../component/home/Footer";
@@ -35,7 +36,9 @@ const Home = () => {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
             <div>
               <span className="inline-block px-4 py-2 bg-red-100 text-red-600 text-sm font-semibold rounded-full mb-3">
-                🔥 Hot Products
+                 <span className="flex items-center gap-1">
+                   <Flame size={16} className="text-red-600" /> Hot Products
+                 </span>
               </span>
               <h2 className="text-4xl font-bold text-gray-900">
                 Our Best Sellers
@@ -70,7 +73,7 @@ const Home = () => {
             </div>
           ) : (
             <div className="text-center py-20">
-              <div className="text-6xl mb-4">🎧</div>
+              <Headphones size={80} className="text-gray-300 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-gray-700 mb-2">
                 No Products Yet
               </h3>
@@ -90,10 +93,6 @@ const Home = () => {
           )}
         </div>
       </section>
-
-
-
-
 
       {/* Footer */}
       <Footer />

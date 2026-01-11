@@ -1,4 +1,5 @@
 import React from "react";
+import { Heart, Headphones } from "lucide-react";
 
 const ProductCard = ({ product }) => {
   // Use custom colors from product or fallback to defaults
@@ -29,7 +30,7 @@ const ProductCard = ({ product }) => {
 
       {/* Wishlist Button */}
       <button className="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-red-50 z-10">
-        <span className="text-gray-600 hover:text-red-600 text-xl">♡</span>
+        <Heart size={20} className="text-gray-600 hover:text-red-600" />
       </button>
 
       {/* Product Image */}
@@ -41,8 +42,8 @@ const ProductCard = ({ product }) => {
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
         ) : (
-          <div className="text-6xl group-hover:scale-110 transition-transform duration-500">
-            🎧
+          <div className="group-hover:scale-110 transition-transform duration-500">
+             <Headphones size={64} className="text-gray-400" />
           </div>
         )}
       </div>
@@ -86,3 +87,4 @@ const ProductCard = ({ product }) => {
 };
 
 export default ProductCard;
+

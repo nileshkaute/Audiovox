@@ -1,4 +1,5 @@
 import React from "react";
+import { Headphones, Sparkles } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -14,7 +15,9 @@ const Hero = () => {
         {/* Left Content */}
         <div className="flex-1 text-center lg:text-left">
           <span className="inline-block px-4 py-2 bg-red-600/20 text-red-400 text-sm font-semibold rounded-full mb-6">
-            🎧 New Collection 2026
+            <span className="flex items-center gap-2">
+              <Headphones size={18} /> New Collection 2026
+            </span>
           </span>
 
           <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight mb-6">
@@ -66,14 +69,14 @@ const Hero = () => {
             {/* Product placeholder */}
             <div className="absolute inset-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center shadow-2xl">
               <div className="text-center">
-                <span className="text-6xl">🎧</span>
-                <p className="text-gray-400 text-sm mt-2">Premium Headphones</p>
+                <Headphones size={80} className="text-white/80 mx-auto" />
+                <p className="text-gray-400 text-sm mt-4">Premium Headphones</p>
               </div>
             </div>
 
             {/* Floating badges */}
-            <div className="absolute top-0 right-0 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm">
-              ✨ Best Seller
+            <div className="absolute top-0 right-0 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm flex items-center gap-2">
+              <Sparkles size={16} className="text-yellow-400" /> Best Seller
             </div>
             <div className="absolute bottom-10 -left-4 px-4 py-2 bg-red-600 rounded-full text-white text-sm font-semibold">
               30% OFF
@@ -86,3 +89,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

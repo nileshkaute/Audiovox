@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ChevronDown, Search, Zap, ShoppingBag, User } from "lucide-react";
 
 const categories = [
   "True Wireless Earbuds",
@@ -27,7 +28,7 @@ const Navbar = () => {
 
       {/* ===== ROW 1 : LOGO ===== */}
       <div className="flex justify-center py-3 border-b border-gray-100 bg-black">
-        <div className="text-3xl font-bold cursor-pointer text-white uppercase">
+        <div className="text-3xl font-bold cursor-pointer text-white uppercase flex items-center gap-2">
           <span className="text-red-600 text-4xl">A</span>udi<span className="text-red-600 ">o</span>vo<span className="text-red-600 text-4xl ">x</span>
         </div>
       </div>
@@ -43,11 +44,11 @@ const Navbar = () => {
 
       {/* Categories Dropdown */}
       <li
-        className="relative cursor-pointer"
+        className="relative cursor-pointer flex items-center gap-1 group"
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
       >
-        Categories <span className="ml-1">▾</span>
+        Categories <ChevronDown size={16} className="group-hover:text-red-600 transition-colors" />
 
         {open && (
           <div className="absolute left-0 top-10 w-[720px] bg-white shadow-xl rounded-lg p-6 grid grid-cols-4 gap-4 z-50">
@@ -67,20 +68,26 @@ const Navbar = () => {
       <li className="cursor-pointer hover:text-red-600">Personalisation</li>
       <li className="cursor-pointer hover:text-red-600">Corporate Orders</li>
       <li className="cursor-pointer hover:text-red-600">Gifting Store</li>
-      <li className="cursor-pointer hover:text-red-600">
-        More <span className="ml-1">▾</span>
+      <li className="cursor-pointer hover:text-red-600 flex items-center gap-1">
+        More <ChevronDown size={16} />
       </li>
     </ul>
 
     {/* ===== RIGHT SECTION ===== */}
-    <div className="flex items-center gap-4">
-      <input
-        type="text"
-        placeholder='Search "Speakers"'
-        className="px-6 py-2 w-70 rounded-full bg-gray-100 outline-none focus:ring-2 focus:ring-black text-sm"
-      />
-      <span className="text-xl cursor-pointer">⚡</span>
-      <span className="text-xl cursor-pointer">👜</span>
+    <div className="flex items-center gap-6">
+      <div className="relative">
+        <input
+            type="text"
+            placeholder='Search "Speakers"'
+            className="pl-10 pr-4 py-2 w-70 rounded-full bg-gray-100 outline-none focus:ring-2 focus:ring-black text-sm"
+        />
+        <Search className="absolute left-3 top-2.5 text-gray-400" size={18} />
+      </div>
+
+      <div className="flex items-center gap-4 text-gray-700">
+        <Zap className="cursor-pointer hover:text-red-600 transition-colors" size={24} />
+        <ShoppingBag className="cursor-pointer hover:text-red-600 transition-colors" size={24} />
+      </div>
     </div>
 
   </div>
@@ -91,3 +98,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

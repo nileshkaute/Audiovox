@@ -1,4 +1,17 @@
 import React from "react";
+import { 
+  Facebook, 
+  Instagram, 
+  Twitter, 
+  Youtube, 
+  MapPin, 
+  Phone, 
+  Mail, 
+  Clock, 
+  CreditCard, 
+  Banknote, 
+  Landmark 
+} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -20,27 +33,27 @@ const Footer = () => {
             <div className="flex gap-4">
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center transition-colors duration-300 text-white"
               >
-                <span>📘</span>
+                <Facebook size={18} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center transition-colors duration-300 text-white"
               >
-                <span>📷</span>
+                <Instagram size={18} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center transition-colors duration-300 text-white"
               >
-                <span>🐦</span>
+                <Twitter size={18} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center transition-colors duration-300 text-white"
               >
-                <span>📺</span>
+                <Youtube size={18} />
               </a>
             </div>
           </div>
@@ -114,19 +127,19 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-6">Contact Info</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <span className="text-red-500">📍</span>
+                <MapPin size={20} className="text-red-500 mt-1" />
                 <span>123 Audio Street, Mumbai, India - 400001</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-red-500">📞</span>
+                <Phone size={20} className="text-red-500 mt-1" />
                 <span>+91 98765 43210</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-red-500">✉️</span>
+                <Mail size={20} className="text-red-500 mt-1" />
                 <span>support@audiovox.com</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-red-500">⏰</span>
+                <Clock size={20} className="text-red-500 mt-1" />
                 <span>Mon - Sat: 10AM - 8PM</span>
               </li>
             </ul>
@@ -151,10 +164,10 @@ const Footer = () => {
               Cookie Policy
             </a>
           </div>
-          <div className="flex gap-3">
-            <span className="text-2xl">💳</span>
-            <span className="text-2xl">💵</span>
-            <span className="text-2xl">🏦</span>
+          <div className="flex gap-3 text-gray-400">
+            <CreditCard size={24} />
+            <Banknote size={24} />
+            <Landmark size={24} />
           </div>
         </div>
       </div>
@@ -163,3 +176,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
