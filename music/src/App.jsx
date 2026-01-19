@@ -3,28 +3,40 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
 import Navbar from "./component/home/Navbar";
-import Admin from "./pages/admin/Admin";
-import AddProduct from "./pages/admin/AddProduct";
 
+// Admin Pages
+import AdminLayout from "./pages/admin/AdminLayout";
+import Dashboard from "./pages/admin/Dashboard";
+import Products from "./pages/admin/Products";
+import AddProduct from "./pages/admin/AddProduct";
 
 const App = () => {
   const location = useLocation();
 
+  // Check if current path is admin route
+  const isAdminRoute = location.pathname.startsWith("/admin");
+
   return (
     <>
-      {/* Show Navbar only if NOT on landing page */}
-      {location.pathname !== "/" && <Navbar />}
+      {/* Show Navbar only on customer pages (not landing, not admin) */}
+      {!isAdminRoute && location.pathname !== "/" && <Navbar />}
 
       <Routes>
+        {/* Customer Routes */}
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<Home />} />
-        
-        {/* Admin Routes */}
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/add-product" element={<AddProduct />} />
+
+        {/* Admin Routes - Nested under AdminLayout */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="products" element={<Products />} />
+          <Route path="add-product" element={<AddProduct />} />
+          <Route path="edit-product/:id" element={<AddProduct />} />
+        </Route>
       </Routes>
     </>
   );
 };
 
 export default App;
+
