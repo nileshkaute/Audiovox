@@ -11,6 +11,7 @@ app.use(express.urlencoded({ extended: true })); // Body parser for URL-encoded
 app.use(cors()); // Enable CORS for frontend communication
 
 // Routes
+app.use("/api/users", require("./routes/authRoutes"));
 app.use("/api/products", productRoutes);
 
 module.exports = app;
