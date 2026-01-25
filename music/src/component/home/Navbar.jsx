@@ -65,9 +65,9 @@ const Navbar = () => {
         )}
       </li>
 
-      <li className="cursor-pointer hover:text-red-600">Personalisation</li>
-      <li className="cursor-pointer hover:text-red-600">Corporate Orders</li>
-      <li className="cursor-pointer hover:text-red-600">Gifting Store</li>
+      <li className="cursor-pointer hover:text-red-600" onClick={() => window.location.href='/about'}>About</li>
+      <li className="cursor-pointer hover:text-red-600" onClick={() => window.location.href='/contact'}>Contact</li>
+      <li className="cursor-pointer hover:text-red-600" onClick={() => window.location.href='/faq'}>FAQ</li>
       <li className="cursor-pointer hover:text-red-600 flex items-center gap-1">
         More <ChevronDown size={16} />
       </li>

@@ -3,6 +3,9 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
 import Navbar from "./component/home/Navbar";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
 
 // Auth
 import { AuthProvider } from "./context/AuthContext";
@@ -34,6 +37,9 @@ const App = () => {
         {/* Customer Routes */}
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/faq" element={<FAQ />} />
         
         {/* Auth Routes */}
         <Route path="/login" element={<Login />} />
