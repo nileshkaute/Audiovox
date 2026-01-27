@@ -8,6 +8,7 @@ import TestimonialsSection from "../component/home/TestimonialsSection";
 import NewsletterSection from "../component/home/NewsletterSection";
 
 import TechSpecsSection from "../component/home/TechSpecsSection";
+import ComparisonSection from "../component/home/ComparisonSection";
 
 const Home = () => {
   return (
@@ -20,6 +21,9 @@ const Home = () => {
 
       {/* Products Section */}
       <ProductSection />
+
+      {/* Comparison Section */}
+      <ComparisonSection />
 
       {/* Tech Specs Section */}
       <TechSpecsSection />
