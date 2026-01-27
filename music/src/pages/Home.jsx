@@ -10,6 +10,7 @@ import NewsletterSection from "../component/home/NewsletterSection";
 import TechSpecsSection from "../component/home/TechSpecsSection";
 import ComparisonSection from "../component/home/ComparisonSection";
 import AppShowcaseSection from "../component/home/AppShowcaseSection";
+import LifestyleGallery from "../component/home/LifestyleGallery";
 
 const Home = () => {
   return (
@@ -31,6 +32,9 @@ const Home = () => {
 
       {/* App Showcase Section */}
       <AppShowcaseSection />
+
+      {/* Lifestyle Gallery Section */}
+      <LifestyleGallery />
 
       {/* Creative Product Section */}
       <CreativeProductSection />
