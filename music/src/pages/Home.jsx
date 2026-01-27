@@ -9,10 +9,11 @@ import NewsletterSection from "../component/home/NewsletterSection";
 
 import TechSpecsSection from "../component/home/TechSpecsSection";
 import ComparisonSection from "../component/home/ComparisonSection";
+import AppShowcaseSection from "../component/home/AppShowcaseSection";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen bg-dark text-white">
       {/* Hero Section */}
       <Hero />
 
@@ -27,6 +28,9 @@ const Home = () => {
 
       {/* Tech Specs Section */}
       <TechSpecsSection />
+
+      {/* App Showcase Section */}
+      <AppShowcaseSection />
 
       {/* Creative Product Section */}
       <CreativeProductSection />
