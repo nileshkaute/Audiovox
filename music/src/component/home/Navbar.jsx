@@ -72,9 +72,21 @@ const Navbar = () => {
 
           {/* Right Side Actions */}
           <div className="flex items-center space-x-4">
-            <button className="p-2 hover:bg-primary/10 rounded-full transition-colors">
+            {/* Search Input */}
+            <div className="relative hidden md:block">
+              <input
+                type="text"
+                placeholder="Search products..."
+                className="pl-10 pr-4 py-2 w-64 rounded-full bg-primary/10 border border-primary/20 text-dark placeholder:text-dark/50 focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+              />
+              <Search className="w-5 h-5 text-dark/50 absolute left-3 top-1/2 -translate-y-1/2" />
+            </div>
+            
+            {/* Mobile Search Button */}
+            <button className="md:hidden p-2 hover:bg-primary/10 rounded-full transition-colors">
               <Search className="w-5 h-5 text-dark/70" />
             </button>
+            
             <button className="p-2 hover:bg-primary/10 rounded-full transition-colors relative">
               <ShoppingBag className="w-5 h-5 text-dark/70" />
               <span className="absolute -top-1 -right-1 bg-secondary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold">
