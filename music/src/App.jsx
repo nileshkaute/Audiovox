@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
@@ -6,6 +6,8 @@ import Navbar from "./component/home/Navbar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
+import CustomCursor from "./component/shared/CustomCursor";
+import Lenis from "lenis";
 
 // Auth
 import { AuthProvider } from "./context/AuthContext";
@@ -22,11 +24,27 @@ import AddProduct from "./pages/admin/AddProduct";
 const App = () => {
   const location = useLocation();
 
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   // Check if current path is admin route
   const isAdminRoute = location.pathname.startsWith("/admin");
 
   return (
     <AuthProvider>
+      <CustomCursor />
       {/* Show Navbar only on customer pages (not landing, not admin, not auth pages) */}
       {!isAdminRoute &&
         location.pathname !== "/" &&
@@ -60,4 +78,5 @@ const App = () => {
 };
 
 export default App;
+
 
