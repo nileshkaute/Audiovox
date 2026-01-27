@@ -11,6 +11,7 @@ import TechSpecsSection from "../component/home/TechSpecsSection";
 import ComparisonSection from "../component/home/ComparisonSection";
 import AppShowcaseSection from "../component/home/AppShowcaseSection";
 import LifestyleGallery from "../component/home/LifestyleGallery";
+import FAQSection from "../component/home/FAQSection";
 
 const Home = () => {
   return (
@@ -35,6 +36,9 @@ const Home = () => {
 
       {/* Lifestyle Gallery Section */}
       <LifestyleGallery />
+
+      {/* FAQ Section */}
+      <FAQSection />
 
       {/* Creative Product Section */}
       <CreativeProductSection />
