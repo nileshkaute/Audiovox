@@ -34,14 +34,14 @@ const COMPARISON_DATA = {
 
 const ComparisonSection = () => {
   return (
-    <section className="py-24 px-4 bg-dark" id="comparison">
+    <section className="py-24 px-4 bg-light" id="comparison">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
+            className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-dark to-accent bg-clip-text text-transparent"
           >
             Choose Your Sound
           </motion.h2>
@@ -49,7 +49,7 @@ const ComparisonSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-gray-400 text-lg max-w-2xl mx-auto"
+            className="text-dark/70 text-lg max-w-2xl mx-auto"
           >
             Find the perfect match for your lifestyle and listening preferences.
           </motion.p>
@@ -59,12 +59,12 @@ const ComparisonSection = () => {
           <table className="w-full text-left border-collapse min-w-[800px]">
             <thead>
               <tr>
-                <th className="py-6 px-4 text-gray-400 font-medium">Features</th>
+                <th className="py-6 px-4 text-dark/70 font-medium">Features</th>
                 {COMPARISON_DATA.models.map((model, idx) => (
                   <th key={idx} className="py-6 px-4 text-center">
-                    <div className={`p-4 rounded-xl ${model.featured ? 'bg-primary/10 border border-primary/20' : 'bg-white/5'}`}>
-                      <h3 className="text-xl font-bold text-white mb-2">{model.name}</h3>
-                      <p className="text-primary font-semibold">{model.price}</p>
+                    <div className={`p-4 rounded-xl ${model.featured ? 'bg-primary/20 border border-primary/40' : 'bg-beige/50'}`}>
+                      <h3 className="text-xl font-bold text-dark mb-2">{model.name}</h3>
+                      <p className="text-secondary font-semibold">{model.price}</p>
                     </div>
                   </th>
                 ))}
@@ -77,14 +77,14 @@ const ComparisonSection = () => {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: fIdx * 0.1 }}
-                  className="border-b border-white/5 hover:bg-white/5 transition-colors"
+                  className="border-b border-dark/10 hover:bg-primary/5 transition-colors"
                 >
-                  <td className="py-6 px-4 text-gray-300 font-medium">{feature}</td>
+                  <td className="py-6 px-4 text-dark/80 font-medium">{feature}</td>
                   {COMPARISON_DATA.models.map((model, mIdx) => (
                     <td key={mIdx} className="py-6 px-4 text-center">
                       <div className="flex justify-center">
                         {typeof model.specs[fIdx] === "string" ? (
-                          <span className="text-white font-medium">{model.specs[fIdx]}</span>
+                          <span className="text-dark font-medium">{model.specs[fIdx]}</span>
                         ) : model.specs[fIdx] ? (
                           <Check className="w-5 h-5 text-green-500" />
                         ) : (

@@ -15,13 +15,13 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-400">
+    <footer className="bg-dark text-light/70">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div>
-            <div className="text-2xl font-bold text-white uppercase mb-4">
+            <div className="text-2xl font-bold text-light uppercase mb-4">
               <span className="text-red-600 text-3xl">A</span>udi
               <span className="text-red-600">o</span>vo
               <span className="text-red-600 text-3xl">x</span>
@@ -33,25 +33,25 @@ const Footer = () => {
             <div className="flex gap-4">
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center transition-colors duration-300 text-white"
+                className="w-10 h-10 rounded-full bg-dark/80 hover:bg-secondary flex items-center justify-center transition-colors duration-300 text-light"
               >
                 <Facebook size={18} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center transition-colors duration-300 text-white"
+                className="w-10 h-10 rounded-full bg-dark/80 hover:bg-secondary flex items-center justify-center transition-colors duration-300 text-light"
               >
                 <Instagram size={18} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center transition-colors duration-300 text-white"
+                className="w-10 h-10 rounded-full bg-dark/80 hover:bg-secondary flex items-center justify-center transition-colors duration-300 text-light"
               >
                 <Twitter size={18} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center transition-colors duration-300 text-white"
+                className="w-10 h-10 rounded-full bg-dark/80 hover:bg-secondary flex items-center justify-center transition-colors duration-300 text-light"
               >
                 <Youtube size={18} />
               </a>
@@ -60,7 +60,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-6">Quick Links</h4>
+            <h4 className="text-light font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="hover:text-red-500 transition-colors">
@@ -92,7 +92,7 @@ const Footer = () => {
 
           {/* Customer Service */}
           <div>
-            <h4 className="text-white font-semibold mb-6">Customer Service</h4>
+            <h4 className="text-light font-semibold mb-6">Customer Service</h4>
             <ul className="space-y-3">
               <li>
                 <a href="/contact" className="hover:text-red-500 transition-colors">
@@ -124,7 +124,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-white font-semibold mb-6">Contact Info</h4>
+            <h4 className="text-light font-semibold mb-6">Contact Info</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={20} className="text-red-500 mt-1" />
@@ -164,7 +164,7 @@ const Footer = () => {
               Cookie Policy
             </a>
           </div>
-          <div className="flex gap-3 text-gray-400">
+          <div className="flex gap-3 text-light/70">
             <CreditCard size={24} />
             <Banknote size={24} />
             <Landmark size={24} />

@@ -32,11 +32,11 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
         onClick={onClick}
         className="w-full py-6 flex items-center justify-between text-left group"
       >
-        <span className={`text-lg font-medium transition-colors ${isOpen ? 'text-primary' : 'text-white group-hover:text-primary'}`}>
+        <span className={`text-lg font-medium transition-colors ${isOpen ? 'text-primary' : 'text-dark group-hover:text-primary'}`}>
           {question}
         </span>
         <div className={`flex-shrink-0 ml-4 p-2 rounded-full border border-white/10 ${isOpen ? 'bg-primary border-primary' : 'bg-white/5'}`}>
-          {isOpen ? <Minus className="w-5 h-5 text-white" /> : <Plus className="w-5 h-5 text-white" />}
+          {isOpen ? <Minus className="w-5 h-5 text-dark" /> : <Plus className="w-5 h-5 text-dark" />}
         </div>
       </button>
       <AnimatePresence>
@@ -48,7 +48,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="pb-6 text-gray-400 leading-relaxed max-w-3xl">
+            <p className="pb-6 text-dark/70 leading-relaxed max-w-3xl">
               {answer}
             </p>
           </motion.div>
@@ -62,14 +62,14 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="py-24 px-4 bg-dark/50" id="faq">
+    <section className="py-24 px-4 bg-beige/50" id="faq">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold mb-6 text-white"
+            className="text-4xl md:text-5xl font-bold mb-6 text-dark"
           >
             Got <span className="text-primary">Questions?</span>
           </motion.h2>
@@ -77,7 +77,7 @@ const FAQSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-gray-400 text-lg"
+            className="text-dark/70 text-lg"
           >
             Find quick answers to common queries about our premium audio products.
           </motion.p>

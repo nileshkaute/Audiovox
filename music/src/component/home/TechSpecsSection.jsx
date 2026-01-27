@@ -37,14 +37,14 @@ const specs = [
 
 const TechSpecsSection = () => {
   return (
-    <section className="py-24 px-4 bg-dark/50" id="specs">
+    <section className="py-24 px-4 bg-beige/50" id="specs">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
+            className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-dark to-accent bg-clip-text text-transparent"
           >
             Engineering Excellence
           </motion.h2>
@@ -52,7 +52,7 @@ const TechSpecsSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-gray-400 text-lg max-w-2xl mx-auto"
+            className="text-dark/70 text-lg max-w-2xl mx-auto"
           >
             Every detail meticulously designed for the ultimate listening experience.
           </motion.p>
@@ -71,10 +71,10 @@ const TechSpecsSection = () => {
               <div className="mb-6 p-4 rounded-xl bg-primary/10 w-fit group-hover:scale-110 transition-transform">
                 {spec.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-white uppercase tracking-wider">
+              <h3 className="text-xl font-semibold mb-4 text-dark uppercase tracking-wider">
                 {spec.title}
               </h3>
-              <p className="text-gray-400 leading-relaxed font-light">
+              <p className="text-dark/70 leading-relaxed font-light">
                 {spec.description}
               </p>
             </motion.div>

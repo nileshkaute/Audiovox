@@ -22,7 +22,7 @@ const APP_FEATURES = [
 
 const AppShowcaseSection = () => {
   return (
-    <section className="py-24 px-4 bg-dark/30 overflow-hidden" id="app">
+    <section className="py-24 px-4 bg-beige overflow-hidden" id="app">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           {/* Phone Mockup */}
@@ -45,16 +45,16 @@ const AppShowcaseSection = () => {
                    </div>
                    
                    <div className="space-y-4">
-                      <div className="h-12 bg-white/5 rounded-xl border border-white/10 flex items-center px-4 justify-between">
-                         <span className="text-xs text-white">Noise Cancelling</span>
+                      <div className="h-12 bg-dark/5 rounded-xl border border-dark/10 flex items-center px-4 justify-between">
+                         <span className="text-xs text-dark">Noise Cancelling</span>
                          <div className="w-8 h-4 bg-primary rounded-full" />
                       </div>
-                      <div className="h-12 bg-white/5 rounded-xl border border-white/10 flex items-center px-4 justify-between">
-                         <span className="text-xs text-white">Transparency</span>
+                      <div className="h-12 bg-dark/5 rounded-xl border border-dark/10 flex items-center px-4 justify-between">
+                         <span className="text-xs text-dark">Transparency</span>
                          <div className="w-8 h-4 bg-gray-700 rounded-full" />
                       </div>
-                      <div className="h-24 bg-white/5 rounded-xl border border-white/10 p-4">
-                         <div className="flex justify-between text-[10px] text-gray-500 mb-2">
+                      <div className="h-24 bg-dark/5 rounded-xl border border-dark/10 p-4">
+                         <div className="flex justify-between text-[10px] text-dark/60 mb-2">
                             <span>Bass</span>
                             <span>Treble</span>
                          </div>
@@ -79,13 +79,13 @@ const AppShowcaseSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-dark">
                 Total Control in <br />
                 <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
                   Your Hands
                 </span>
               </h2>
-              <p className="text-gray-400 text-lg mb-12 max-w-lg">
+              <p className="text-dark/70 text-lg mb-12 max-w-lg">
                 The Neo Connect app unlocks the full potential of your earphones. 
                 Fine-tune your audio markers, locate your buds, and keep them up to date.
               </p>
@@ -99,12 +99,12 @@ const AppShowcaseSection = () => {
                     transition={{ duration: 0.5, delay: index * 0.2 }}
                     className="flex gap-6 group"
                   >
-                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/30 transition-colors">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-dark/5 border border-dark/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/30 transition-colors">
                       {feature.icon}
                     </div>
                     <div>
                       <h4 className="text-white font-semibold mb-2">{feature.title}</h4>
-                      <p className="text-gray-500 text-sm leading-relaxed">{feature.description}</p>
+                      <p className="text-dark/60 text-sm leading-relaxed">{feature.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -115,7 +115,7 @@ const AppShowcaseSection = () => {
                     <Smartphone className="w-5 h-5" />
                     App Store
                  </button>
-                 <button className="px-8 py-3 border border-white/20 text-white rounded-full font-bold hover:bg-white/5 transition-colors flex items-center gap-2">
+                 <button className="px-8 py-3 border border-dark/20 text-white rounded-full font-bold hover:bg-dark/5 transition-colors flex items-center gap-2">
                     Play Store
                  </button>
               </div>

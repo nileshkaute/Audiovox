@@ -21,14 +21,14 @@ const GALLERY_IMAGES = [
 
 const LifestyleGallery = () => {
   return (
-    <section className="py-24 px-4 bg-dark" id="gallery">
+    <section className="py-24 px-4 bg-light" id="gallery">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold mb-6 text-white"
+            className="text-4xl md:text-5xl font-bold mb-6 text-dark"
           >
             Live in Your <span className="text-primary">Sound</span>
           </motion.h2>
@@ -36,7 +36,7 @@ const LifestyleGallery = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-gray-400 text-lg max-w-2xl mx-auto"
+            className="text-dark/70 text-lg max-w-2xl mx-auto"
           >
             Designed to fit perfectly into your daily rhythm, whether you're at work, 
             in the gym, or exploring the city.
@@ -58,7 +58,7 @@ const LifestyleGallery = () => {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                <h4 className="text-white text-xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <h4 className="text-dark text-xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   {img.title}
                 </h4>
                 <p className="text-primary text-sm mt-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
