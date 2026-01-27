@@ -22,9 +22,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div>
             <div className="text-2xl font-bold text-light uppercase mb-4">
-              <span className="text-red-600 text-3xl">A</span>udi
-              <span className="text-red-600">o</span>vo
-              <span className="text-red-600 text-3xl">x</span>
+              <span className="text-secondary">Neo</span>Sound
             </div>
             <p className="text-gray-500 mb-6">
               Premium audio gear for true music lovers. Experience sound like
@@ -136,7 +134,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={20} className="text-red-500 mt-1" />
-                <span>support@audiovox.com</span>
+                <span>support@neosound.com</span>
               </li>
               <li className="flex items-start gap-3">
                 <Clock size={20} className="text-red-500 mt-1" />
@@ -151,7 +149,7 @@ const Footer = () => {
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-500">
-            © 2026 AudioVox. All rights reserved.
+            © 2026 NeoSound. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="hover:text-red-500 transition-colors">
